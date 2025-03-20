@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurso CECyTE Coahuila 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="mx-auto max-w-2xl bg-white rounded-lg shadow-md p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-semibold text-blue-600">Concurso de Creatividad e Innovación Tecnológica CECyTE 2025</h1>
+            <p class="text-gray-600 mt-2">Plataforma de Inscripción</p>
+        </header>
+        
+        <main class="space-y-6">
+            <section id="inscripcion" class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Inscripción de Proyectos</h2>
+                <p class="mb-4">
+                    Bienvenido a la plataforma de inscripción del Concurso CECyTE Coahuila 2025. 
+                    Por favor, complete el siguiente formulario para registrar su proyecto.
+                </p>
+                <form id="registroForm" class="space-y-4">
+                    <div>
+                        <label for="nombreProyecto" class="block text-gray-700 text-sm font-bold mb-2">Nombre del Proyecto:</label>
+                        <input type="text" id="nombreProyecto" name="nombreProyecto" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="categoria" class="block text-gray-700 text-sm font-bold mb-2">Categoría:</label>
+                        <select id="categoria" name="categoria" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="" disabled selected>Seleccione una categoría</option>
+                            <option value="tecnologicos">Prototipos Tecnológicos</option>
+                            <option value="informaticos">Prototipos Informáticos</option>
+                            <option value="investigacion">Proyectos de Investigación</option>
+                            <option value="ecologica">Prototipos de Cultura Ecológica y Conservación del Medio Ambiente</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nombreEquipo" class="block text-gray-700 text-sm font-bold mb-2">Nombre del Equipo:</label>
+                        <input type="text" id="nombreEquipo" name="nombreEquipo" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="integrantes" class="block text-gray-700 text-sm font-bold mb-2">Integrantes del Equipo (Nombre completo, separado por comas):</label>
+                        <input type="text" id="integrantes" name="integrantes" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="asesor" class="block text-gray-700 text-sm font-bold mb-2">Nombre del Asesor:</label>
+                        <input type="text" id="asesor" name="asesor" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="plantel" class="block text-gray-700 text-sm font-bold mb-2">Plantel:</label>
+                        <input type="text" id="plantel" name="plantel" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="documentoProyecto" class="block text-gray-700 text-sm font-bold mb-2">Descripción del Proyecto (Anexo 2 - PDF):</label>
+                        <input type="file" id="documentoProyecto" name="documentoProyecto" accept=".pdf" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="fichaTecnica" class="block text-gray-700 text-sm font-bold mb-2">Ficha Técnica (Anexo 3 - PDF):</label>
+                        <input type="file" id="fichaTecnica" name="fichaTecnica" accept=".pdf" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="credenciales" class="block text-gray-700 text-sm font-bold mb-2">Credenciales (Estudiantes y Asesores - PDF):</label>
+                        <input type="file" id="credenciales" name="credenciales" accept=".pdf" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Inscribir Proyecto</button>
+                </form>
+                <div id="mensaje" class="mt-4 text-yellow-600 font-semibold"></div>
+            </section>
+
+            <section id="informacion" class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Información del Concurso</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Bases del Concurso:</strong> Las bases del concurso detallan los requisitos de participación, el proceso de selección y los criterios de evaluación.</li>
+                    <li><strong>Requisitos de Inscripción:</strong> Los requisitos para inscribir un proyecto incluyen la presentación de la documentación completa y el cumplimiento de los criterios establecidos.</li>
+                    <li><strong>Categorías de Participación:</strong>
+                        <ul class="list-disc list-inside ml-5 space-y-1">
+                            <li>Prototipos Tecnológicos</li>
+                            <li>Prototipos Informáticos</li>
+                            <li>Proyectos de Investigación</li>
+                            <li>Prototipos de Cultura Ecológica y Conservación del Medio Ambiente</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fechas Importantes:</strong> El calendario del concurso incluye las fechas de inicio y cierre de inscripciones, la evaluación de los proyectos y la ceremonia de premiación.</li>
+                    <li><strong>Criterios de Evaluación:</strong> Los proyectos serán evaluados en función de su originalidad, innovación, viabilidad técnica, impacto social y calidad de la presentación.</li>
+                    <li><strong>Premios:</strong> Se otorgarán premios a los proyectos ganadores de cada categoría, incluyendo reconocimientos, becas y apoyos para el desarrollo de los proyectos.</li>
+                </ul>
+                <p class="mt-4">
+                    Para obtener información detallada sobre el concurso, consulte la <a href="#" class="text-blue-600 hover:underline">Convocatoria Completa</a>.
+                </p>
+            </section>
+        </main>
+
+        <footer class="text-center mt-8 text-gray-500 text-sm">
+            <p>© 2025 Concurso de Creatividad e Innovación Tecnológica CECyTE. Todos los derechos reservados.</p>
+            <p>Desarrollado por la Coordinación de ODES de los CECYTE Coahuila.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nombreProyecto = document.getElementById('nombreProyecto').value;
+            const categoria = document.getElementById('categoria').value;
+            const nombreEquipo = document.getElementById('nombreEquipo').value;
+            const integrantes = document.getElementById('integrantes').value;
+            const asesor = document.getElementById('asesor').value;
+            const plantel = document.getElementById('plantel').value;
+            const documentoProyecto = document.getElementById('documentoProyecto').files[0];
+            const fichaTecnica = document.getElementById('fichaTecnica').files[0];
+            const credenciales = document.getElementById('credenciales').files[0];
+
+            if (!documentoProyecto || !fichaTecnica || !credenciales) {
+                mostrarMensaje('Por favor, asegúrese de adjuntar todos los documentos requeridos.');
+                return;
+            }
+
+            // Aquí se simula el envío de datos y la validación
+            console.log('Nombre del Proyecto:', nombreProyecto);
+            console.log('Categoría:', categoria);
+            console.log('Nombre del Equipo:', nombreEquipo);
+            console.log('Integrantes del Equipo:', integrantes);
+            console.log('Asesor:', asesor);
+            console.log('Plantel:', plantel);
+            console.log('Documento del Proyecto:', documentoProyecto);
+            console.log('Ficha Técnica:', fichaTecnica);
+            console.log('Credenciales:', credenciales);
+
+            // Simulación de envío exitoso
+            setTimeout(function() {
+                mostrarMensaje('Su proyecto ha sido registrado exitosamente. ¡Gracias por participar!');
+                document.getElementById('registroForm').reset();
+            }, 2000);
+        });
+
+        function mostrarMensaje(mensaje) {
+            const mensajeElement = document.getElementById('mensaje');
+            mensajeElement.textContent = mensaje;
+        }
+    </script>
+</body>
+</html>
